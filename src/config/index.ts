@@ -2,6 +2,6 @@ import croquet from './croquet.yaml'
 
 const { appId, apiKey } = croquet
 
-export { 
+export {
   appId, apiKey,
 }
