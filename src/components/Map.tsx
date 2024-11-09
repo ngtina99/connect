@@ -6,17 +6,14 @@ mapboxgl.accessToken = 'pk.eyJ1Ijoibmd0aW5hMDUyNiIsImEiOiJjbTNhaWFyZzcxN3FxMnJzZ
 
 const Map = () => {
   const mapContainerRef = useRef(null);
-  const mapRef = useRef(null);
-  const markersRef = useRef([]);
 
   useEffect(() => {
     const map = new mapboxgl.Map({
       container: mapContainerRef.current,
       style: 'mapbox://styles/mapbox/streets-v11',
-      center: [-74.006, 40.7128], // Coordinates for New York City
+      center: [-9.139, 38.7223], // Coordinates for Lisbon, Portugal
       zoom: 10
     });
-    mapRef.current = map;
 
     map.on('click', (e) => {
       const { lng, lat } = e.lngLat;
@@ -30,17 +27,12 @@ const Map = () => {
       markerElement.style.backgroundSize = '100%';
 
       // Add marker to the map
-      const marker = new mapboxgl.Marker(markerElement)
+      new mapboxgl.Marker(markerElement)
         .setLngLat([lng, lat])
         .addTo(map);
-
-      // Save marker reference
-      markersRef.current.push(marker);
     });
 
     return () => {
-      // Clean up markers
-      markersRef.current.forEach(marker => marker.remove());
       map.remove();
     };
   }, []);
