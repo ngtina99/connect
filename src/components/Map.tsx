@@ -1,34 +1,67 @@
-import React from 'react';
-import { GoogleMap, LoadScript, Marker } from '@react-google-maps/api';
+import React, { useEffect } from 'react';
+import mapboxgl from 'mapbox-gl';
+import '../styles/Map.scss';
 
-// Replace this with your actual Google Maps API key
-const API_KEY = 'AIzaSyBlMTTQfeJLZr9iS8_kEdBdUoOgZOO4IyI';
-
-// Define the map container style
-const mapContainerStyle = {
-  width: '100%',
-  height: '400px',
-};
-
-// Define the default center of the map
-const center = {
-  lat: 37.7749,  // Example: San Francisco latitude
-  lng: -122.4194, // Example: San Francisco longitude
-};
+mapboxgl.accessToken = 'pk.eyJ1Ijoibmd0aW5hMDUyNiIsImEiOiJjbTNhaWFyZzcxN3FxMnJzZTJzeDNheGk0In0.o6DonEDJxZ-zV1oIrukuoA';
 
 const Map = () => {
-  return (
-    <LoadScript googleMapsApiKey={API_KEY}>
-      <GoogleMap
-        mapContainerStyle={mapContainerStyle}
-        center={center}
-        zoom={12}
-      >
-        {/* Marker Example */}
-        <Marker position={center} />
-      </GoogleMap>
-    </LoadScript>
-  );
+  useEffect(() => {
+    const map = new mapboxgl.Map({
+      container: 'map',
+      style: 'mapbox://styles/mapbox/streets-v11',
+      center: [-74.006, 40.7128], // Coordinates for New York City
+      zoom: 10
+    });
+
+    map.on('load', () => {
+      map.addSource('regions', {
+        type: 'geojson',
+        data: 'path_to_your_geojson_file'
+      });
+
+      map.addLayer({
+        id: 'regions-layer',
+        type: 'fill',
+        source: 'regions',
+        paint: {
+          'fill-color': '#888888',
+          'fill-opacity': 0.4
+        }
+      });
+
+      // Change color on click
+      map.on('click', 'regions-layer', (e) => {
+        const features = map.queryRenderedFeatures(e.point, {
+          layers: ['regions-layer']
+        });
+
+        if (features.length) {
+          const feature = features[0];
+          map.setFeatureState(
+            {
+              source: 'regions',
+              id: feature.id
+            },
+            {
+              color: '#ff0000' // New color
+            }
+          );
+        }
+      });
+
+      map.on('mousemove', 'regions-layer', (e) => {
+        map.getCanvas().style.cursor = 'pointer';
+      });
+
+      map.on('mouseleave', 'regions-layer', () => {
+        map.getCanvas().style.cursor = '';
+      });
+    });
+
+    return () => map.remove();
+  }, []);
+
+  return <div id="map" className="map-container"></div>;
 };
 
 export default Map;
