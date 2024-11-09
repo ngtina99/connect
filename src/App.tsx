@@ -13,7 +13,7 @@ export default function App() {
   const [count, set_count] = useStateTogether('counter_0', 0)
 
   return (
-    <div className="app-container" style={{ height: '100vh', width: '100vw' }}>
+    <div>
       <div>
         <HeroLogo {...{ type: 'reacttogether' }} />
         <HeroLogo {...{ type: 'react' }} />
