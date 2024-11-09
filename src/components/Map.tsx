@@ -1,34 +1,43 @@
-import React from 'react';
-import { GoogleMap, LoadScript, Marker } from '@react-google-maps/api';
+import React, { useEffect, useRef } from 'react';
+import mapboxgl from 'mapbox-gl';
+import '../styles/Map.scss';
 
-// Replace this with your actual Google Maps API key
-const API_KEY = 'AIzaSyBlMTTQfeJLZr9iS8_kEdBdUoOgZOO4IyI';
-
-// Define the map container style
-const mapContainerStyle = {
-  width: '100%',
-  height: '400px',
-};
-
-// Define the default center of the map
-const center = {
-  lat: 37.7749,  // Example: San Francisco latitude
-  lng: -122.4194, // Example: San Francisco longitude
-};
+mapboxgl.accessToken = 'pk.eyJ1Ijoibmd0aW5hMDUyNiIsImEiOiJjbTNhaWFyZzcxN3FxMnJzZTJzeDNheGk0In0.o6DonEDJxZ-zV1oIrukuoA';
 
 const Map = () => {
-  return (
-    <LoadScript googleMapsApiKey={API_KEY}>
-      <GoogleMap
-        mapContainerStyle={mapContainerStyle}
-        center={center}
-        zoom={12}
-      >
-        {/* Marker Example */}
-        <Marker position={center} />
-      </GoogleMap>
-    </LoadScript>
-  );
+  const mapContainerRef = useRef(null);
+
+  useEffect(() => {
+    const map = new mapboxgl.Map({
+      container: mapContainerRef.current,
+      style: 'mapbox://styles/ngtina0526/cm3ap2ssc00o601o0a70nbh80',
+      center: [-9.139, 38.7223], // Coordinates for Lisbon, Portugal
+      zoom: 10
+    });
+
+    map.on('click', (e) => {
+      const { lng, lat } = e.lngLat;
+
+      // Create a DOM element for the marker
+      const markerElement = document.createElement('div');
+      markerElement.className = 'marker';
+      markerElement.style.backgroundImage = 'url(https://icons.veryicon.com/png/o/miscellaneous/logo-design-of-lingzhuyun/icon-correct-24-1.png)'; // Replace with your online image URL
+      markerElement.style.width = '30px';
+      markerElement.style.height = '30px';
+      markerElement.style.backgroundSize = '100%';
+
+      // Add marker to the map
+      new mapboxgl.Marker(markerElement)
+        .setLngLat([lng, lat])
+        .addTo(map);
+    });
+
+    return () => {
+      map.remove();
+    };
+  }, []);
+
+  return <div ref={mapContainerRef} className="map-container"></div>;
 };
 
 export default Map;

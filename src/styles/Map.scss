@@ -1,0 +1,17 @@
+/* src/styles/Map.scss */
+/* src/styles/Map.scss */
+.map-container {
+    height: 100%;
+    width: 100vw;
+    position: absolute;
+    top: 50;
+    left: 0;
+  }
+  
+
+  .marker {
+    background-color: transparent;
+    background-repeat: no-repeat;
+    background-position: center;
+    border-radius: 50%;
+  }
