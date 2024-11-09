@@ -1,13 +1,14 @@
-
 /* src/styles/Map.scss */
 .map-container {
-    // position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    height: 100%;
+    height: 100vh;
     width: 100%;
-    margin:auto;
-    overflow: hidden;
+    position: relative;
   }
+  
+  .marker {
+    background-color: transparent;
+    background-repeat: no-repeat;
+    background-position: center;
+    border-radius: 50%;
+  }
+  
