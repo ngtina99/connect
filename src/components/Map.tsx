@@ -15,23 +15,6 @@ const Map = () => {
       zoom: 10
     });
 
-    map.on('click', (e) => {
-      const { lng, lat } = e.lngLat;
-
-      // Create a DOM element for the marker
-      const markerElement = document.createElement('div');
-      markerElement.className = 'marker';
-      markerElement.style.backgroundImage = 'url(https://icons.veryicon.com/png/o/miscellaneous/logo-design-of-lingzhuyun/icon-correct-24-1.png)'; // Replace with your online image URL
-      markerElement.style.width = '30px';
-      markerElement.style.height = '30px';
-      markerElement.style.backgroundSize = '100%';
-
-      // Add marker to the map
-      new mapboxgl.Marker(markerElement)
-        .setLngLat([lat, lng])
-        .addTo(map);
-    });
-
     return () => {
       map.remove();
     };
