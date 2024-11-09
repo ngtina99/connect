@@ -10,7 +10,7 @@ const Map = () => {
   useEffect(() => {
     const map = new mapboxgl.Map({
       container: mapContainerRef.current,
-      style: 'mapbox://styles/mapbox/streets-v11',
+      style: 'mapbox://styles/ngtina0526/cm3ap2ssc00o601o0a70nbh80',
       center: [-9.139, 38.7223], // Coordinates for Lisbon, Portugal
       zoom: 10
     });
