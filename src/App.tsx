@@ -2,6 +2,7 @@ import './App.scss'
 import '@styles/examplePage.scss'
 
 import { useStateTogether } from 'react-together'
+import Map from './components/Map';
 
 import { version } from '@package'
 import { HeroLogo } from '@components'
@@ -17,6 +18,8 @@ export default function App() {
         <HeroLogo {...{ type: 'vite' }} />
       </div>
       <h1>Hello Tina, Welcome to the website</h1>
+	  <h1>My Google Map</h1>
+      <Map />
       <div className='card'>
         <button onClick={() => set_count((count) => count + 1) }>Synq'd count is {count}</button>
         {/* <button onClick={() => set_count((count) => count + 1)}>Synq'd count is {count}</button> */}

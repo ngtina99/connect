@@ -12,6 +12,7 @@
     "lines_of_code_dist": "cloc --exclude-dir=node_modules --not-match-f='.*\\.(svg|md|toml)' dist"
   },
   "dependencies": {
+    "@react-google-maps/api": "^2.20.3",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-together": "0.2.0"
