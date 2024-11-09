@@ -3,6 +3,7 @@ import '@styles/examplePage.scss'
 
 import { useStateTogether } from 'react-together'
 import Map from './components/Map';
+import Main from './components/Main';
 
 import { version } from '@package'
 import { HeroLogo } from '@components'
@@ -12,16 +13,16 @@ export default function App() {
   const [count, set_count] = useStateTogether('counter_0', 0)
 
   return (
-    <div>
+    <div className="app-container" style={{ height: '100vh', width: '100vw' }}>
       <div>
         <HeroLogo {...{ type: 'reacttogether' }} />
         <HeroLogo {...{ type: 'react' }} />
         <HeroLogo {...{ type: 'vite' }} />
       </div>
-      <h1>Hello Tina, Welcome to the website</h1>
+      <CursorEllipse />
+      {/* <Main />  */}
 	  <h1>My Google Map</h1>
       <Map />
-      <CursorEllipse />
       <div className='card'>
         <button onClick={() => set_count((count) => count + 1) }>Synq'd count is {count}</button>
         {/* <button onClick={() => set_count((count) => count + 1)}>Synq'd count is {count}</button> */}
