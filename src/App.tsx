@@ -6,6 +6,7 @@ import Map from './components/Map';
 
 import { version } from '@package'
 import { HeroLogo } from '@components'
+import CursorEllipse from '@components/CursorEllipse';
 
 export default function App() {
   const [count, set_count] = useStateTogether('counter_0', 0)
@@ -20,6 +21,7 @@ export default function App() {
       <h1>Hello Tina, Welcome to the website</h1>
 	  <h1>My Google Map</h1>
       <Map />
+      <CursorEllipse />
       <div className='card'>
         <button onClick={() => set_count((count) => count + 1) }>Synq'd count is {count}</button>
         {/* <button onClick={() => set_count((count) => count + 1)}>Synq'd count is {count}</button> */}
