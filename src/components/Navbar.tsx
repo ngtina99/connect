@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './Navbar.scss'; // Make sure to include the compiled CSS/SCSS
+import '../styles/Navbar.scss'; // Make sure to include the compiled CSS/SCSS
 
 const Navbar: React.FC = () => {
   const [menuOpen, setMenuOpen] = useState(false);

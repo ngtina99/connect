@@ -3,6 +3,7 @@ import '@styles/examplePage.scss'
 
 import { useStateTogether } from 'react-together'
 import Map from './components/Map';
+import Navbar from '@components/Navbar';
 import Main from './components/Main';
 
 import { version } from '@package'
@@ -14,6 +15,7 @@ export default function App() {
 
   return (
     <div>
+      <Navbar/>
       <div>
         <HeroLogo {...{ type: 'reacttogether' }} />
         <HeroLogo {...{ type: 'react' }} />
