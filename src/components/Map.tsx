@@ -28,7 +28,7 @@ const Map = () => {
 
       // Add marker to the map
       new mapboxgl.Marker(markerElement)
-        .setLngLat([lng, lat])
+        .setLngLat([lat, lng])
         .addTo(map);
     });
 
