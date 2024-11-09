@@ -49,3 +49,13 @@ body {
   -o-user-drag: none;
   -khtml-user-drag: none;
 }
+
+.ellipse {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  background-color: black; /* Adjust color as desired */
+  border-radius: 50%;
+  pointer-events: none; /* Makes sure the ellipses don’t interfere with clicks */
+  transition: transform 0.1s ease, opacity 0.1s ease;
+}
