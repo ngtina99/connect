@@ -28,7 +28,7 @@ export default function App() {
 			</div>
 
 {/* JoinSessionButton (appears on all pages) */}
-<JoinSessionButton />
+{/* <JoinSessionButton /> */}
 </div>
 
 {/* CursorEllipse and Version Number */}
