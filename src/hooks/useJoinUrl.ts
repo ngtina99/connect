@@ -5,7 +5,7 @@ export function useJoinUrl(): string | null {
 
   useEffect(() => {
     // Replace with actual logic to fetch or generate the join URL
-    setJoinUrl('https://example.com/session');
+    setJoinUrl('https://hacktogether-template-zg2.pages.dev/');
   }, []);
 
   return joinUrl;
