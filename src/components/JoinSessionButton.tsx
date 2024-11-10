@@ -11,7 +11,7 @@ export default function AutomatedJoinSessionButton() {
     } else {
       console.log('No active session available.');
     }
-  }, [joinUrl]);
+  }, [joinUrl]); // Runs when `joinUrl` is updated
 
   return null; // No UI is needed if it's automated
 }

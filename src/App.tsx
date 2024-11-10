@@ -7,8 +7,9 @@ import MapboxExample from '@pages/Map/MapboxExample';
 import CursorEllipse from './components/CursorEllipse';
 import JoinSessionButton from './components/JoinSessionButton.tsx';
 import RippleCircle from '@components/RipleCircle/RipleCircle';
-import './gobalStyle.css'
-import SessionComponent from './components/SessionComponent.tsx'; // Adjust the path based on where you put it
+import './gobalStyle.css';
+import SessionComponent from './components/SessionComponent.tsx'; // Ensure the path is correct
+import AutomatedJoinSessionButton from './components/JoinSessionButton'; // Import it here
 
 export default function App() {
   return (
@@ -21,16 +22,15 @@ export default function App() {
               <Route path="/" element={<MainPage />} />
               <Route path="/feel" element={<FeelPage />} />
               <Route path="/map" element={<MapboxExample />} />
-              {/* <Route path="/ripple" element={<RippleCircle />} /> */}
-              
             </Routes>
-			</div>
-			<SessionComponent />
-{/* JoinSessionButton (appears on all pages) */}
-{/* <JoinSessionButton /> */}
-</div>
+          </div>
+          <SessionComponent />
+        </div>
 
-{/* CursorEllipse and Version Number */}
+        {/* Automated Join Session (appears automatically) */}
+        <AutomatedJoinSessionButton />
+
+        {/* CursorEllipse and Version Number */}
         <CursorEllipse />
       </div>
     </div>
