@@ -24,7 +24,7 @@ export default function App() {
               <Route path="/feel" element={<FeelPage />} />
               <Route path="/map" element={<MapboxExample />} />
               {/* <Route path="/ripple" element={<RippleCircle />} /> */}
-              
+
             </Routes>
 			</div>
 			<SessionComponent />
