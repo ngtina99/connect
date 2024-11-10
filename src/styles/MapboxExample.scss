@@ -14,15 +14,8 @@
 
 /* src/styles/Map.scss */
 .map-container {
-    height: 100vh;
-    width: 100vw;
-    position: relative;
-  }
-  
-  .marker {
-    background-color: transparent;
-    background-repeat: no-repeat;
-    background-position: center;
-    border-radius: 50%;
+	transform: scale(1.5); /* Scale up to 150% of viewport size */
+	transform-origin: center; /* Center the scaling effect */
+	overflow: hidden; /* Hide overflow so map appears larger than screen */
   }
   

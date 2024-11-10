@@ -12,13 +12,15 @@ const MapboxExample = () => {
   const [pinnedObjects, setPinnedObjects] = useStateTogether('pinnedObjects', []);
 
   useEffect(() => {
+    // Initialize the map, starting from the USA (e.g., New York)
     mapRef.current = new mapboxgl.Map({
       container: mapContainerRef.current,
       style: 'mapbox://styles/ngtina0526/cm3axp61u01lj01o02g6ydirr',
-      center: [-65.017, -16.457],
-      zoom: 5
+      center: [-74.0060, 40.7128], // New York coordinates
+      zoom: 0 // Initial zoom level for the USA view
     });
 
+    // Add markers for the geojson data
     const geojson = {
       type: 'FeatureCollection',
       features: [
@@ -85,6 +87,7 @@ const MapboxExample = () => {
         .addTo(mapRef.current);
     }
 
+    // Add event listener for clicking on the map
     mapRef.current.on('click', (e) => {
       const { lng, lat } = e.lngLat;
 
@@ -93,6 +96,19 @@ const MapboxExample = () => {
         { id: Date.now(), lng, lat }
       ]);
     });
+
+    // Delay the zoom-in animation by 30 seconds
+    setTimeout(() => {
+      if (mapRef.current) {
+        // Zoom to Lisbon after 30 seconds
+        mapRef.current.easeTo({
+          center: [0.0000, 38.7688],  // Lisbon coordinates
+          zoom: 6,                    // Desired zoom level for Lisbon
+          duration: 5000,              // Animation duration (5 seconds)
+          curve: 1                     // Smooth transition curve
+        });
+      }
+    }, 3000);  // 30 seconds delay
 
     return () => {
       mapRef.current.remove();
@@ -111,7 +127,7 @@ const MapboxExample = () => {
         // Create a DOM element for the marker
         const markerElement = document.createElement('div');
         markerElement.className = 'marker';
-        markerElement.style.backgroundImage = 'url(https://avatars.githubusercontent.com/u/147401933?v=4)'; // Replace with your online image URL
+        markerElement.style.backgroundImage = 'url(https://avatars.githubusercontent.com/u/147401933?v=4)';
         markerElement.style.width = '30px';
         markerElement.style.height = '30px';
         markerElement.style.backgroundSize = '100%';
@@ -128,4 +144,3 @@ const MapboxExample = () => {
 };
 
 export default MapboxExample;
-
