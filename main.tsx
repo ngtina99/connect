@@ -1,26 +1,59 @@
-import { StrictMode } from 'react'
-import { createRoot } from 'react-dom/client'
-import { ReactTogether } from 'react-together'
-import { BrowserRouter as Router } from 'react-router-dom'
-import { MoodProvider } from '@hooks/Mood/MoodContext'
+import React from 'react';
+import { useNavigate } from 'react-router-dom';
+import Button from '../../components/Button/Button';
+import './Main.scss';
+import myImage from '../../assets/images/Vector.png';
 
-import App from '@/App'
+const MainPage: React.FC = () => {
+  const navigate = useNavigate();
 
-createRoot(document.getElementById('root')!).render(
-  <StrictMode>
-    <MoodProvider>
-    <ReactTogether
-      sessionParams={{
-        appId: import.meta.env['VITE_APP_ID'],
-        apiKey: import.meta.env['VITE_API_KEY'],
-        name: import.meta.env['VITE_SESSION_NAME'],
-        password: import.meta.env['VITE_SESSION_PASSWORD'],
-      }}
-    >
-      <Router>
-        <App />
-      </Router>
-    </ReactTogether>
-    </MoodProvider>
-  </StrictMode>
-)
+  const handleNextClick = () => {
+    navigate('/feel');
+  };
+
+  return (
+    <div className="main-page">
+      <h1 className="main-title">Welcome to the Main Page</h1>
+      <h2 className="main-subtitle">Share your emotion with your friends.</h2>
+      <div className="image-container">
+        <img src={myImage} alt="My Image" className="main-image animate-ripple" />
+      </div>
+      <Button text="Next" onClick={handleNextClick} />
+    </div>
+  );
+};
+
+export default MainPage;
+
+
+// import React from 'react';
+// import { useNavigate } from 'react-router-dom';
+// import Button from '../../components/Button/Button';
+// import './Main.scss';
+
+// // Import the PNG image
+// import myImage from '../../assets/images/Vector.png';
+
+// const MainPage: React.FC = () => {
+//   const navigate = useNavigate();
+
+//   const handleNextClick = () => {
+//     navigate('/feel');
+//   };
+
+//   return (
+//     <div className="main-page">
+//       <h1 className="main-title">Welcome to the Main Page</h1>
+//       <h2 className="main-subtitle">Share your emotion with your friends.</h2>
+      
+//       {/* Display the PNG image */}
+//       <div className="image-container">
+//         <img src={myImage} alt="My Image" className="main-image" />
+//       </div>
+
+//       <Button text="Next" onClick={handleNextClick} />
+//     </div>
+//   );
+// };
+
+// export default MainPage;
