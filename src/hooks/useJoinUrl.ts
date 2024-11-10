@@ -1,16 +1,19 @@
 import React, { useEffect } from 'react';
+import { useJoinUrl } from '../hooks/useJoinUrl';
 
-import { useState, useEffect } from 'react';
-
-export function useJoinUrl(): string | null {
-  const [joinUrl, setJoinUrl] = useState<string | null>(null);
+export default function AutomatedJoinSessionButton() {
+  const joinUrl = useJoinUrl();
 
   useEffect(() => {
-    // Set the join URL here
-    setJoinUrl('https://hacktogether-template-zg2.pages.dev');
-  }, []); // Empty dependency array means it runs once, when the component mounts
+    if (joinUrl) {
+      // Automatically opens the join URL in a new tab
+      window.open(joinUrl, '_blank');
+    } else {
+      console.log('No active session available.');
+    }
+  }, [joinUrl]);
 
-  return joinUrl;
+  return null; // No UI is needed if it's automated
 }
 
 // export function useJoinUrl(): string | null {
