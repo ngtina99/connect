@@ -1,6 +1,7 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import { ReactTogether } from 'react-together'
+import './src/gobalStyle.css'
 
 import App from '@/App'
 
