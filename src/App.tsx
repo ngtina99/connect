@@ -12,7 +12,7 @@ export default function App() {
     <div className="app">
       <div className="flex">
         {/* Sidebar */}
-        <Sidebar />
+        {/* <Sidebar /> */}
         {/* Centered Content Area */}
         <div className="ml-[200px] flex justify-center items-center p-5 w-full min-h-screen">
           <div className="w-full">

@@ -1,19 +1,23 @@
 // src/styles/Button.scss
 
-$primary-color: #2b3e50;
-$primary-dark-color: #1e2d3b;
-
-.custom-button {
-  background-color: $primary-color;
-  color: #ffffff;
-  transition: background-color 0.3s ease;
+/* src/components/Button/Button.scss */
+.button {
+  width: 50px;
+  height: 50px;
+  flex-shrink: 0;
+  border: none;
+  border-radius: 50px;
+  background: #D42A27;
+  box-shadow: 0px 0px 35px 0px #D42A27;
+  color: #fff;
+  font-size: 1rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s;
 
   &:hover {
-    background-color: $primary-dark-color;
-  }
-
-  &:focus {
-    outline: none;
-    box-shadow: 0 0 0 2px rgba(43, 62, 80, 0.5);
+    transform: scale(1.1);
   }
 }
