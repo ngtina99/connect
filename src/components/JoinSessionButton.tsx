@@ -1,22 +1,17 @@
-import React from 'react';
-import { useJoinUrl } from '../hooks/useJoinUrl.ts';
+import React, { useEffect } from 'react';
+import { useJoinUrl } from '../hooks/useJoinUrl';
 
-// export default function JoinSessionButton() {
-//   const joinUrl = useJoinUrl(); // Ensure the hook is used here
+export default function AutomatedJoinSessionButton() {
+  const joinUrl = useJoinUrl();
 
-//   const handleJoinClick = () => {
-//     if (joinUrl) {
-//       window.open(joinUrl, '_blank'); // Opens in a new tab
-//     } else {
-//       alert('No active session available.');
-//     }
-//   };
+  useEffect(() => {
+    if (joinUrl) {
+      // Automatically opens the join URL in a new tab
+      window.open(joinUrl, '_blank');
+    } else {
+      console.log('No active session available.');
+    }
+  }, [joinUrl]);
 
-//   return (
-//     <div style={{ textAlign: 'center', padding: '20px' }}>
-//       <button onClick={handleJoinClick} disabled={!joinUrl}>
-//         Join Session
-//       </button>
-//     </div>
-//   );
-// }
+  return null; // No UI is needed if it's automated
+}

@@ -5,7 +5,7 @@ import MainPage from '@pages/Main/Main';
 import FeelPage from './pages/LandingPage/FeelPage';
 import MapboxExample from '@pages/Map/MapboxExample';
 import CursorEllipse from './components/CursorEllipse';
-import JoinSessionButton from './components/JoinSessionButton';
+import JoinSessionButton from './components/JoinSessionButton.tsx';
 import RippleCircle from '@components/RipleCircle/RipleCircle';
 import './gobalStyle.css'
 
