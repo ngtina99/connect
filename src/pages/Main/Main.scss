@@ -38,8 +38,8 @@
   }
 }
 
-.animate-ripple {
-  animation: ripple 10s infinite;
+.animate-ripple:hover {
+  animation: ripple 0.5s infinite;
 }
 
 .main-page {
@@ -49,8 +49,8 @@
     justify-content: center;
     min-height: 100vh;
     text-align: center;
-    background-color: #161616;
-    color: #F0F0F0;
+    background-color: var(--secondary-color);
+    color: var(--white-color);
     padding: 2rem;
   }
 
@@ -62,7 +62,7 @@
   
   .main-subtitle {
     font-size: 1.25rem;
-    color: #F0F0F0;
+    color: var(--lightGray-color);
     margin-bottom: 2rem;
   }
   
@@ -78,3 +78,6 @@
     display: block;
     margin: 0 auto;
   }
+  
+
+

@@ -19,10 +19,6 @@ const FeelPage: React.FC = () => {
     navigate('/map');
   };
 
-  const handleBackClick = () => {
-    navigate(-1); // Navigate to the previous page
-  };
-
   const getMoodImage = () => {
     if (mood < 33) {
       return sadFace;
@@ -45,11 +41,10 @@ const FeelPage: React.FC = () => {
 
   return (
     <div className="feel-page">
-      <Button text="Back" onClick={handleBackClick} />
       <div className={getBackgroundClass()}></div>
       <h1>how do you feel today?</h1>
       <img src={getMoodImage()} alt="Mood" className="mood-image" />
-      <label htmlFor="mood-slider" className="visually-hidden" style={{ margin: '10px' }}></label>
+      <label htmlFor="mood-slider" className="visually-hidden">Mood slider</label>
       <div className="mood-slider-container">
         <input
           type="range"
