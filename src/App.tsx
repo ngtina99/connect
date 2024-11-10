@@ -17,16 +17,8 @@ export default function App() {
     <div className='app'>
       <Navbar />
       <CursorEllipse />
-      <div id='mainpage' className='section'>
-        <Main />
-      </div>
-      <div id='header' className='section'>
-        {' '}
-        <Map />
-      </div>
       <div id='map' className='section'>
-        {' '}
-        <MapboxExample />{' '}
+        <MapboxExample />
       </div>
       <div className='version-num'>{version}</div>
     </div>
