@@ -2,7 +2,8 @@ import './App.scss'
 import '@styles/examplePage.scss'
 
 import { useStateTogether } from 'react-together'
-import Map from './components/MapboxExample';
+import MapboxExample from './components/MapboxExample';
+import Map from './components/Background';
 import Navbar from '@components/Navbar';
 import ClickableWrapper from '@components/ClickableSection';
 import Main from './components/Main';
@@ -17,12 +18,13 @@ export default function App() {
   return (
     <div>
       <Navbar/>
-      <div>
+      {/* <div>
         <HeroLogo {...{ type: 'reacttogether' }} />
         <HeroLogo {...{ type: 'react' }} />
         <HeroLogo {...{ type: 'vite' }} />
-      </div>
+      </div> */}
       <CursorEllipse />
+<<<<<<< HEAD
       <Main />
       <ClickableWrapper> </ClickableWrapper>  <Map />
       {/* <Main />  */}
@@ -35,6 +37,9 @@ export default function App() {
       </div>
       <p className='read-the-docs'>Click on the respective logos to learn more.</p>
 
+=======
+      <Map />
+>>>>>>> main
       <div className='version-num'>{version}</div>
     </div>
   )
