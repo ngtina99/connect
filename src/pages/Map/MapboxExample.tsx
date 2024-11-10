@@ -107,8 +107,8 @@ const MapboxExample = () => {
       if (mapRef.current) {
         // Zoom to Lisbon after 2 seconds
         mapRef.current.easeTo({
-          center: [-7.0000, 38.7688],  // Lisbon coordinates
-          zoom: 8,                    // Desired zoom level for Lisbon
+          center: [0.0000, 38.7688],  // Lisbon coordinates
+          zoom: 6,                    // Desired zoom level for Lisbon
           duration: 4000,             // Animation duration (4 seconds)
           curve: 1                    // Smooth transition curve
         });
@@ -310,4 +310,4 @@ export default MapboxExample;
 //   return <div ref={mapContainerRef} id="map" style={{ height: '100vh', width: '100vw' }} />;
 // };
 
-// export default MapboxExample
+// export default MapboxExample;
