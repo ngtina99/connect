@@ -2,7 +2,7 @@ import React, { useEffect, useRef } from 'react';
 import mapboxgl from 'mapbox-gl';
 import 'mapbox-gl/dist/mapbox-gl.css';
 import { useStateTogether } from 'react-together';
-import '../styles/MapboxExample.scss';
+import './MapboxExample.scss';
 
 mapboxgl.accessToken = 'pk.eyJ1Ijoibmd0aW5hMDUyNiIsImEiOiJjbTNhaWFyZzcxN3FxMnJzZTJzeDNheGk0In0.o6DonEDJxZ-zV1oIrukuoA';
 
@@ -104,11 +104,11 @@ const MapboxExample = () => {
         mapRef.current.easeTo({
           center: [0.0000, 38.7688],  // Lisbon coordinates
           zoom: 6,                    // Desired zoom level for Lisbon
-          duration: 5000,              // Animation duration (5 seconds)
+          duration: 4000,              // Animation duration (5 seconds)
           curve: 1                     // Smooth transition curve
         });
       }
-    }, 3000);  // 30 seconds delay
+    }, 2000);  // 30 seconds delay
 
     return () => {
       mapRef.current.remove();

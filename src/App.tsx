@@ -3,9 +3,10 @@ import { Routes, Route } from 'react-router-dom';
 import Sidebar from '@components/Slidebar/Sidebar';
 import MainPage from '@pages/Main/Main';
 import FeelPage from './pages/LandingPage/FeelPage';
-import MapboxExample from '@components/MapboxExample';
+import MapboxExample from '@pages/Map/MapboxExample';
 import CursorEllipse from './components/CursorEllipse';
 import RippleCircle from '@components/RipleCircle/RipleCircle';
+import './gobalStyle.css'
 export default function App() {
   return (
     <div className="app">
