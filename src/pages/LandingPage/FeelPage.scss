@@ -1,116 +1,38 @@
 /* src/pages/FeelPage.scss */
 .feel-page {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  min-height: 100vh;
-  background-color: #161616;
-  text-align: center;
-  padding: 2rem;
-  color: var(--primary-color);
-  position: relative;
-  overflow: hidden;
-}
-
-.feel-page h1 {
-  margin-bottom: 2rem;
-  letter-spacing: 0.05em;
-  text-decoration-skip-ink: none;
-  color: #f0f0f0;
-  text-align: center;
-  font-family: 'Lexend Deca';
-  font-size: 64px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: normal;
-  letter-spacing: 3.2px;
-}
-
-.mood-image {
-  width: 150px;
-  height: auto;
-  margin-bottom: 2rem;
-}
-
-.mood-slider-container {
-  width: 80%;
-  max-width: 600px;
-  display: flex;
-  align-items: center;
-  flex-shrink: 0;
-  border-radius: 50px;
-  border: 2px solid #f0f0f0;
-  background: linear-gradient(90deg, rgba(212, 42, 39, 0.2) 0%, rgba(0, 94, 255, 0.2) 50%, rgba(0, 255, 4, 0.2) 100%);
-  padding: 0;
-  height: 50px;
-  position: relative;
-  margin-bottom: 1rem;
-}
-
-.mood-slider {
-  width: 100%;
-  height: 50px;
-  appearance: none;
-  background: transparent;
-  cursor: pointer;
-  position: absolute;
-  top: 0;
-  left: 0;
-  border-radius: 50px;
-}
-
-.mood-slider::-webkit-slider-thumb {
-  -webkit-appearance: none;
-  width: 50px;
-  height: 50px;
-  background-color: #D42A27;
-  border: 2px solid #F0F0F0;
-  border-radius: 50px;
-  box-shadow: 0px 0px 35px 0px #D42A27;
-}
-
-.mood-slider::-moz-range-thumb {
-  width: 50px;
-  height: 50px;
-  background-color: #D42A27;
-  border: 2px solid #F0F0F0;
-  border-radius: 50px;
-  box-shadow: 0px 0px 35px 0px #D42A27;
-}
-
-.mood-labels {
-  width: 80%;
-  max-width: 600px;
-  display: flex;
-  justify-content: space-between;
-  font-size: 1rem;
-  color: #f0f0f0;
-}
-/* src/pages/FeelPage.scss */
-
-.mood-background {
-  position: absolute;
-  width: 262px;
-  height: 262px;
-  border-radius: 262px;
-  filter: blur(250px);
-  opacity: 0.65;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: -1;
-  transition: background 0.3s ease-in-out, filter 0.3s ease-in-out;
-}
-
-.mood-background.sad {
-  background: rgba(212, 42, 39, 0.65);
-}
-
-.mood-background.neutral {
-  background: rgba(0, 94, 255, 0.65);
-}
-
-.mood-background.happy {
-  background: rgba(0, 255, 4, 0.65);
-}
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background-color: var(--primary-color);
+    text-align: center;
+    padding: 2rem;
+    color: var(--black-color);
+  }
+  
+  .feel-page h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 2rem;
+  }
+  
+  .mood-image {
+    width: 150px;
+    height: auto;
+    margin-bottom: 2rem;
+  }
+  
+  .mood-slider {
+    width: 80%;
+    max-width: 600px;
+    margin-bottom: 1rem;
+  }
+  
+  .mood-labels {
+    width: 80%;
+    max-width: 600px;
+    display: flex;
+    justify-content: space-between;
+    font-size: 1rem;
+  }

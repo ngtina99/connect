@@ -7,14 +7,14 @@ import MapboxExample from '@pages/Map/MapboxExample';
 import CursorEllipse from './components/CursorEllipse';
 import JoinSessionButton from './components/JoinSessionButton.tsx';
 import RippleCircle from '@components/RipleCircle/RipleCircle';
-import './gobalStyle.css';
-import SessionComponent from './components/SessionComponent.tsx'; // Ensure the path is correct
-import AutomatedJoinSessionButton from './components/JoinSessionButton'; // Import it here
+import './gobalStyle.css'
 
 export default function App() {
   return (
     <div className="app">
       <div className="flex">
+        {/* Sidebar */}
+        <Sidebar />
         {/* Centered Content Area */}
         <div className="ml-[200px] flex justify-center items-center p-5 w-full min-h-screen">
           <div className="w-full">
@@ -22,15 +22,16 @@ export default function App() {
               <Route path="/" element={<MainPage />} />
               <Route path="/feel" element={<FeelPage />} />
               <Route path="/map" element={<MapboxExample />} />
+              {/* <Route path="/ripple" element={<RippleCircle />} /> */}
+              
             </Routes>
-          </div>
-          <SessionComponent />
-        </div>
+			</div>
 
-        {/* Automated Join Session (appears automatically) */}
-        <AutomatedJoinSessionButton />
+{/* JoinSessionButton (appears on all pages) */}
+{/* <JoinSessionButton /> */}
+</div>
 
-        {/* CursorEllipse and Version Number */}
+{/* CursorEllipse and Version Number */}
         <CursorEllipse />
       </div>
     </div>
