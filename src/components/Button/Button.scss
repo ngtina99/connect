@@ -1,0 +1,19 @@
+// src/styles/Button.scss
+
+$primary-color: #2b3e50;
+$primary-dark-color: #1e2d3b;
+
+.custom-button {
+  background-color: $primary-color;
+  color: #ffffff;
+  transition: background-color 0.3s ease;
+
+  &:hover {
+    background-color: $primary-dark-color;
+  }
+
+  &:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(43, 62, 80, 0.5);
+  }
+}

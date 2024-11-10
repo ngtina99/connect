@@ -1,6 +1,6 @@
 // src/components/Button/Button.tsx
 import React from 'react';
-import './Button.sass'
+import './Button.scss';
 
 interface ButtonProps {
   text: string;

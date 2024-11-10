@@ -1,10 +1,24 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  .ripple {
+    @apply animation-ripple;
+  }
+}
+
 html {
   box-sizing: border-box;
+  height: 100%;
+  body {
+    height: 100%;
+  }
 }
-@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap');
 
 :root {
-  --font-base: "DM Sans", sans-serif;
+  --font-base: 'DM Sans', sans-serif;
 
   --primary-color: #edf2f8;
   --secondary-color: #313bac;
@@ -26,15 +40,6 @@ html {
 *:before,
 *:after {
   box-sizing: inherit;
-}
-
-html,
-body {
-  height: 100%;
-}
-
-body {
-  margin: 0;
 }
 
 .version-num {

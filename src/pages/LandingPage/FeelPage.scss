@@ -1,0 +1,40 @@
+/* src/pages/FeelPage.scss */
+.feel-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background-color: var(--primary-color);
+    text-align: center;
+    padding: 2rem;
+    color: var(--black-color);
+  }
+  
+  .feel-page h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 2rem;
+  }
+  
+  .mood-image {
+    width: 150px;
+    height: auto;
+    margin-bottom: 2rem;
+  }
+  
+  .mood-slider {
+    width: 80%;
+    max-width: 600px;
+    margin-bottom: 1rem;
+  }
+  
+  .mood-labels {
+    width: 80%;
+    max-width: 600px;
+    display: flex;
+    justify-content: space-between;
+    font-size: 1rem;
+  }
+  
+  

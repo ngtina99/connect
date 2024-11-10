@@ -1,0 +1,82 @@
+/* src/pages/Main.scss */
+
+/* src/pages/Main.scss */
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+.main-page {
+  @apply flex flex-col items-center justify-center min-h-screen text-center bg-secondary-color text-white;
+}
+
+.main-title {
+  @apply text-4xl font-bold mb-6;
+}
+
+.main-subtitle {
+  @apply text-lg text-gray-600 mb-6;
+}
+
+.image-container {
+  @apply w-1/2 max-w-xs mb-6;
+}
+
+.main-image {
+  @apply w-full h-auto transition-transform duration-500 ease-in-out transform;
+}
+
+@keyframes ripple {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.animate-ripple:hover {
+  animation: ripple 0.5s infinite;
+}
+
+.main-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    text-align: center;
+    background-color: var(--secondary-color);
+    color: var(--white-color);
+    padding: 2rem;
+  }
+  
+  .main-title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 1.5rem;
+  }
+  
+  .main-subtitle {
+    font-size: 1.25rem;
+    color: var(--lightGray-color);
+    margin-bottom: 2rem;
+  }
+  
+  .image-container {
+    width: 100%;
+    max-width: 400px;
+    margin-bottom: 2rem;
+  }
+  
+  .main-image {
+    width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+  }
+  
+
+

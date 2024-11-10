@@ -11,8 +11,6 @@ createRoot(document.getElementById('root')!).render(
       sessionParams={{
         appId: import.meta.env['VITE_APP_ID'],
         apiKey: import.meta.env['VITE_API_KEY'],
-        // Having the two args below will make React Together immediately connect
-        // to a new session. Remove them if you want users to start "offline"
         name: import.meta.env['VITE_SESSION_NAME'],
         password: import.meta.env['VITE_SESSION_PASSWORD'],
       }}
@@ -20,15 +18,6 @@ createRoot(document.getElementById('root')!).render(
       <Router>
         <App />
       </Router>
-      {/* test of the api key */}
-      {/* {JSON.stringify({
-        appId: import.meta.env['VITE_APP_ID'],
-        apiKey: import.meta.env['VITE_API_KEY'],
-        // Having the two args below will make React Together immediately connect
-        // to a new session. Remove them if you want users to start "offline"
-        name: import.meta.env['VITE_SESSION_NAME'],
-        password: import.meta.env['VITE_SESSION_PASSWORD'],
-      }, null, )} */}
     </ReactTogether>
   </StrictMode>
 )
