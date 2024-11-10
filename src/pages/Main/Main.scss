@@ -38,8 +38,8 @@
   }
 }
 
-.animate-ripple:hover {
-  animation: ripple 0.5s infinite;
+.animate-ripple {
+  animation: ripple 10s infinite;
 }
 
 .main-page {
@@ -49,11 +49,11 @@
     justify-content: center;
     min-height: 100vh;
     text-align: center;
-    background-color: var(--secondary-color);
-    color: var(--white-color);
+    background-color: #161616;
+    color: #F0F0F0;
     padding: 2rem;
   }
-
+  
   .main-title {
     font-size: 2.5rem;
     font-weight: bold;
@@ -62,7 +62,7 @@
   
   .main-subtitle {
     font-size: 1.25rem;
-    color: var(--lightGray-color);
+    color: #F0F0F0;
     margin-bottom: 2rem;
   }
   
@@ -78,6 +78,3 @@
     display: block;
     margin: 0 auto;
   }
-  
-
-

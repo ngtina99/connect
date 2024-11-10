@@ -160,7 +160,18 @@ const MapboxExample = () => {
     }
   }, [pinnedObjects])
 
-  return <div ref={mapContainerRef} id='map' style={{ height: '100vh', width: '100vw' }} />
+  return (
+    <div>
+      <Button text='Back' onClick={handleNextClick} />
+      <div ref={mapContainerRef} id='map' style={{ height: '100vh', width: '100vw' }} />
+    </div>
+  )
 }
+// return (
+//   <div>
+//     <Button text="Back" onClick={handleNextClick} />
+//     <div ref={mapContainerRef} id="map" style={{ height: '100vh', width: '100vw' }} />
+//   </div>
+// );
 
 export default MapboxExample
