@@ -1,9 +1,10 @@
 /* src/pages/Main.scss */
 
 /* src/pages/Main.scss */
-@import "tailwindcss/base";
-@import "tailwindcss/components";
-@import "tailwindcss/utilities";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 
 .main-page {
   @apply flex flex-col items-center justify-center min-h-screen text-center bg-secondary-color text-white;
