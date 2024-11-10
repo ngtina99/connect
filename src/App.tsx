@@ -5,8 +5,10 @@ import MainPage from '@pages/Main/Main';
 import FeelPage from './pages/LandingPage/FeelPage';
 import MapboxExample from '@pages/Map/MapboxExample';
 import CursorEllipse from './components/CursorEllipse';
+import JoinSessionButton from './components/JoinSessionButton';
 import RippleCircle from '@components/RipleCircle/RipleCircle';
 import './gobalStyle.css'
+
 export default function App() {
   return (
     <div className="app">
@@ -23,10 +25,13 @@ export default function App() {
               {/* <Route path="/ripple" element={<RippleCircle />} /> */}
               
             </Routes>
-          </div>
-        </div>
+			</div>
 
-        {/* CursorEllipse and Version Number */}
+{/* JoinSessionButton (appears on all pages) */}
+<JoinSessionButton />
+</div>
+
+{/* CursorEllipse and Version Number */}
         <CursorEllipse />
       </div>
     </div>
