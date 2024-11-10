@@ -14,8 +14,6 @@ export default function App() {
   return (
     <div className="app">
       <div className="flex">
-        {/* Sidebar */}
-        {/*<Sidebar />*/}
         {/* Centered Content Area */}
         <div className="ml-[200px] flex justify-center items-center p-5 w-full min-h-screen">
           <div className="w-full">
@@ -24,7 +22,7 @@ export default function App() {
               <Route path="/feel" element={<FeelPage />} />
               <Route path="/map" element={<MapboxExample />} />
               {/* <Route path="/ripple" element={<RippleCircle />} /> */}
-
+              
             </Routes>
 			</div>
 			<SessionComponent />
