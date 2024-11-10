@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+// import React, { useEffect } from 'react';
 
 import { useState, useEffect } from 'react';
 
@@ -7,7 +7,7 @@ export function useJoinUrl(): string | null {
 
   useEffect(() => {
     // Set the join URL here
-    setJoinUrl('https://hacktogether-template-zg2.pages.dev/');
+    // setJoinUrl('https://hacktogether-template-zg2.pages.dev/');
   }, []); // Empty dependency array means it runs once, when the component mounts
 
   return joinUrl;
