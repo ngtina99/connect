@@ -10,3 +10,5 @@ socket.onopen = () => {
 socket.onmessage = (event: MessageEvent) => {
   console.log('WebSocket message:', event.data);
 };
+
+// Other WebSocket event handlers...
