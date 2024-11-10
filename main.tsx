@@ -1,6 +1,7 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import { ReactTogether } from 'react-together'
+import { BrowserRouter as Router } from 'react-router-dom'
 
 import App from '@/App'
 
@@ -16,9 +17,11 @@ createRoot(document.getElementById('root')!).render(
         password: import.meta.env['VITE_SESSION_PASSWORD'],
       }}
     >
-      <App />
+      <Router>
+        <App />
+      </Router>
       {/* test of the api key */}
-	  {/* {JSON.stringify({
+      {/* {JSON.stringify({
         appId: import.meta.env['VITE_APP_ID'],
         apiKey: import.meta.env['VITE_API_KEY'],
         // Having the two args below will make React Together immediately connect
