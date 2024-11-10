@@ -6,14 +6,15 @@ import sadFace from '../../assets/images/sad.png'
 import neutralFace from '../../assets/images/neutral.png'
 import happyFace from '../../assets/images/happy.png'
 import Button from '../../components/Button/Button'
+import { useMood } from '@hooks/Mood/MoodContext'
 
 const FeelPage: React.FC = () => {
-  const [mood, setMood] = useState(50)
+  const { mood, setMood } = useMood()
+  const navigate = useNavigate()
 
   const handleSliderChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setMood(Number(event.target.value))
   }
-  const navigate = useNavigate()
 
   const handleNextClick = () => {
     navigate('/map')
@@ -31,12 +32,11 @@ const FeelPage: React.FC = () => {
 
   return (
     <div className='feel-page'>
-      <h1>How do you feel today?</h1>
-      <img src={getMoodImage()} alt='Mood' className='mood-image' />
-
+      {' '}
+      <h1>How do you feel today?</h1> <img src={getMoodImage()} alt='Mood' className='mood-image' />{' '}
       <label htmlFor='mood-slider' className='visually-hidden'>
         Mood slider
-      </label>
+      </label>{' '}
       <input
         type='range'
         min='0'
@@ -46,13 +46,12 @@ const FeelPage: React.FC = () => {
         className='mood-slider'
         id='mood-slider'
         title='Mood slider'
-      />
+      />{' '}
       <div className='mood-labels'>
-        <span>Bad</span>
-        <span>Neutral</span>
-        <span>Good</span>
-      </div>
-      <Button text='Next' onClick={handleNextClick} />
+        {' '}
+        <span>Bad</span> <span>Neutral</span> <span>Good</span>{' '}
+      </div>{' '}
+      <Button text='Next' onClick={handleNextClick} />{' '}
     </div>
   )
 }
