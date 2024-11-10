@@ -13,11 +13,12 @@ const MainPage: React.FC = () => {
 
   return (
     <div className="main-page">
-      <h1 className="main-title">Welcome to the Main Page</h1>
-      <h2 className="main-subtitle">Share your emotion with your friends.</h2>
       <div className="image-container">
         <img src={myImage} alt="My Image" className="main-image animate-ripple" />
       </div>
+      <h1 className="main-title">connect</h1>
+      <h2 className="main-subtitle">share how you feel<br /> with your friends, any time everywhere</h2>
+      
       <Button text="Next" onClick={handleNextClick} />
     </div>
   );

@@ -1,15 +1,15 @@
-// src/components/Button/Button.tsx
 import React from 'react';
 import './Button.scss';
 
 interface ButtonProps {
   text: string;
   onClick: () => void;
+  className?: string; // Make className optional
 }
 
-const Button: React.FC<ButtonProps> = ({ text, onClick }) => {
+const Button: React.FC<ButtonProps> = ({ text, onClick, className }) => {
   return (
-    <button className="button" onClick={onClick}>
+    <button className={`button ${className}`} onClick={onClick}>
       {text}
     </button>
   );
